@@ -1,5 +1,5 @@
 const tutorials = [
-  'what does the this keyword mean?',
+  `what does the this keyword mean?`,
   'What is the Constructor OO pattern?',
   'implementing Blockchain Web API',
   'The Test Driven Development Workflow',
@@ -12,5 +12,11 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map(titleCased, tutorials);
+  function titleCased(tutorials){
+    return tutorials.split(` `).map((word) =>{
+      return word[0].toUpperCase() + word.slice(1)
+    }).join(` `)
+  }
+
 }
